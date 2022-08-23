@@ -1,0 +1,20 @@
+﻿---
+version: "2.1"
+services:
+  yarp:
+    image: maplelolita/reverse-proxy:latest
+    container_name: yarp
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=true
+      - ASPNETCORE_Kestrel__Certificates__Default__Path= "/https/full.pem"
+      - ASPNETCORE_Kestrel__Certificates__Default__KeyPath= "/https/key.pem"
+      - apollo__AppId=reverseproxy
+      - apollo__Env=DEV
+      - apollo__MetaServer=http://metaserver:8080/
+      - apollo__ConfigServer__0=http://configserver:8080/
+      - apollo__Namespaces=application
+      - apollo__Namespaces__0=application
+    volumes:
+      - /data/yarp/https:/https
+    network_mode: host
+    restart: always
