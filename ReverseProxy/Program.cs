@@ -1,8 +1,14 @@
 var builder = WebApplication.CreateBuilder(args);
 
-builder.WebHost.ConfigureAppConfiguration((context, configurationBuilder) =>
+builder.WebHost.ConfigureKestrel(options =>
 {
-    configurationBuilder.AddApollo(context.Configuration.GetSection("apollo"));
+    options.Limits.MaxRequestBodySize = 1024 * 1024 * 1024;
+});
+
+builder.WebHost.ConfigureAppConfiguration(configurationBuilder =>
+{
+    configurationBuilder.SetBasePath(AppDomain.CurrentDomain.BaseDirectory);
+    configurationBuilder.AddJsonFile("config.json", true, true);
 });
 
 builder.Services.Configure<ForwardedHeadersOptions>(options =>

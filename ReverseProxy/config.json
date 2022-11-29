@@ -1,0 +1,21 @@
+{
+  "ReverseProxy": {
+    "Routes": {
+      "routeDefault": {
+        "ClusterId": "clusterDefault",
+        "Match": {
+          "Path": "{**catch-all}"
+        }
+      }
+    },
+    "Clusters": {
+      "clusterDefault": {
+        "Destinations": {
+          "default": {
+            "Address": "https://www.bing.com/"
+          }
+        }
+      }
+    }
+  }
+}
