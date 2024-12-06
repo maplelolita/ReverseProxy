@@ -1,0 +1,9 @@
+{
+  "apollo": {
+    "AppId": "appid",
+    "Env": "DEV",
+    "MetaServer": "http://metaserver/",
+    "ConfigServer": [ "http://configserver/" ],
+    "Namespaces": [ "application" ]
+  }
+}

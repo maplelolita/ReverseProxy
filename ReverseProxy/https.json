@@ -1,0 +1,10 @@
+{
+  "Kestrel": {
+    "Certificates": {
+      "Default": {
+        "Path": "/https/full.pem",
+        "KeyPath": "/https/key.pem"
+      }
+    }
+  }
+}

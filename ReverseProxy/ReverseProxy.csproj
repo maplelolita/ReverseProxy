@@ -1,17 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
 	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
+		<TargetFramework>net9.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
 		<AssemblyName>ReverseProxy</AssemblyName>
 		<RootNamespace>ReverseProxy</RootNamespace>
+		<PublishAot>False</PublishAot>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Com.Ctrip.Framework.Apollo.Configuration" Version="2.10.2" />
-		<PackageReference Include="Yarp.ReverseProxy" Version="2.1.0" />
+		<PackageReference Include="Yarp.ReverseProxy" Version="2.2.0" />
 	</ItemGroup>
 
 </Project>
